@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: hazelcast-svc
+spec:
+  type: NodePort
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30081
+  selector:
+    type: backend
+#minikube tunnel -> para abrir para conexão externa
+#kubectl get svc -> para ver ip externo
+#kubectl expose deployment ms-u2d-pix-dp --type=LoadBalancer --name=ms-u2d-svc
+#minikube ip -> ver ip do cluster na mesma classe ip do pc

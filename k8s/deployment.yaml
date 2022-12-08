@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: hazelcast-container
-          image: u2dtecnologia/playground:a375a65c03d248bd2c58c673a4357b
+          image: u2dtecnologia/playground:b705f04066eb6b5d4ffa718d82d266
           ports:
             - name: http
               containerPort: 8080

@@ -12,7 +12,7 @@ class HazelcastConfig {
     @Bean
     fun hazelcastInstance(): HazelcastInstance{
         var cfg = Config()
-        cfg.getMapConfig("u2d")
+        cfg.getMapConfig("accounts")
         cfg.networkConfig.join.multicastConfig.isEnabled = false
         cfg.networkConfig.join.kubernetesConfig.isEnabled = true
         return Hazelcast.newHazelcastInstance(cfg)

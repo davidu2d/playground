@@ -1,8 +1,7 @@
 package com.u2d.playground.domain
 
-class Account(agency: String, numberAccount: String, type: String) {
+import java.io.Serializable
 
-    val agency = agency
-    val numberAccount = numberAccount
-    val type = type
+data class Account(val agency: String, val numberAccount: String, val type: String): Serializable {
+
 }
