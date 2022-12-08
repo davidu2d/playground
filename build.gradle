@@ -24,7 +24,9 @@ dependencies {
 	implementation 'com.hazelcast:hazelcast-all:4.2.6'
 }
 
-springBoot { mainClass.set("com.u2d.playground.PlaygroundApplication") }
+jar {
+	enabled = true
+}
 
 tasks.withType(KotlinCompile) {
 	kotlinOptions {
