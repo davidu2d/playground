@@ -26,6 +26,11 @@ dependencies {
 }
 
 jar{
+	manifest {
+		attributes(
+				'Main-Class': 'com.u2d.playground.PlaygroundApplication'
+		)
+	}
 	archiveName 'playground.jar'
 }
 
