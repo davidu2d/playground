@@ -1,0 +1,41 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
+plugins {
+	id 'org.springframework.boot' version '2.7.6'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'org.jetbrains.kotlin.jvm' version '1.6.21'
+	id 'org.jetbrains.kotlin.plugin.spring' version '1.6.21'
+}
+
+group = 'com.u2d'
+version = '1.0.0'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation("org.springframework.boot:spring-boot-starter-web")
+	implementation 'org.jetbrains.kotlin:kotlin-reflect'
+	implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.mockk:mockk:1.13.3'
+	implementation 'com.hazelcast:hazelcast-all:4.2.6'
+}
+
+jar{
+	archiveName 'playground.jar'
+}
+
+tasks.withType(KotlinCompile) {
+	kotlinOptions {
+		freeCompilerArgs = ['-Xjsr305=strict']
+		jvmTarget = '1.8'
+	}
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
