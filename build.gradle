@@ -8,7 +8,6 @@ plugins {
 }
 
 group = 'com.u2d'
-version = '1.0.0'
 sourceCompatibility = '1.8'
 
 repositories {
@@ -25,14 +24,7 @@ dependencies {
 	implementation 'com.hazelcast:hazelcast-all:4.2.6'
 }
 
-jar{
-	manifest {
-		attributes(
-				'Main-Class': 'com.u2d.playground.PlaygroundApplication'
-		)
-	}
-	archiveName 'playground.jar'
-}
+springBoot { mainClass.set("com.u2d.playground.PlaygroundApplication") }
 
 tasks.withType(KotlinCompile) {
 	kotlinOptions {
